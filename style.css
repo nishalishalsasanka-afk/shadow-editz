@@ -187,3 +187,142 @@ footer {
         font-size: 48px;
     }
   }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Animated background */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #ff1744;
+    filter: blur(180px);
+    opacity: 0.12;
+    top: -200px;
+    left: -150px;
+    animation: moveGlow 8s infinite alternate;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background: #0066ff;
+    filter: blur(180px);
+    opacity: 0.10;
+    bottom: -200px;
+    right: -150px;
+    animation: moveGlow2 10s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes moveGlow {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(250px, 180px);
+    }
+}
+
+@keyframes moveGlow2 {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-250px, -180px);
+    }
+}
+
+/* Header */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span,
+h1 span,
+.auth-logo span {
+    color: #ff1744;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #ff1744;
+}
+
+/* Login button */
+
+.login-btn {
+    margin-left: 25px;
+    padding: 9px 18px;
+    background: #ff1744;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+
+    background:
+        radial-gradient(circle at center,
+        #30101a 0%,
+        #080808 45%,
+        #000 100
